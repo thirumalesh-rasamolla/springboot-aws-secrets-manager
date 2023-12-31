@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-springboot-mysql-app
-        image: 281798031104.dkr.ecr.us-east-2.amazonaws.com/thiru-eks-demo:latest
+        image: 281798031104.dkr.ecr.us-east-2.amazonaws.com/thiru-eks-rds:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
