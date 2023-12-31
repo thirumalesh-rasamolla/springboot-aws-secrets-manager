@@ -30,7 +30,7 @@ public class ApplicationConfig {
         return DataSourceBuilder
                 .create()
                 //  .driverClassName("com.mysql.cj.jdbc.driver")
-                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/mysql-demo")
+                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/thiru_mysql_db")
                 .username(secrets.getUsername())
                 .password(secrets.getPassword())
                 .build();
@@ -39,7 +39,7 @@ public class ApplicationConfig {
 
     private AwsSecrets getSecret() {
 
-        String secretName = "rds-mysql-secret";
+        String secretName = "rds!db-486a818f-a8fa-4f59-8350-956c90d4de91";
         String region = "us-east-2";
 
 
