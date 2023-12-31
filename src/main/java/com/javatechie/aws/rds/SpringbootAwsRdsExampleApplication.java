@@ -28,7 +28,7 @@ public class SpringbootAwsRdsExampleApplication {
 
 	@SneakyThrows
 	@GetMapping("/{id}")
-	public Book findBook(@PathVariable int id) {
+	public Book findBook(@PathVariable int id) throws Exception {
 		Book book = bookRepository.findById(id).orElseThrow(() -> new Exception("Book not available"));
 		return book;
 	}

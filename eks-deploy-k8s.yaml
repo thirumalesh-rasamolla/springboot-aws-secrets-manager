@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: springboot-mysql-app
+  name: springboot-mysql-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springboot-mysql-app
+  template:
+    metadata:
+      labels:
+        app: springboot-mysql-app
+    spec:
+      containers:
+      - name: my-springboot-mysql-app
+        image: 281798031104.dkr.ecr.us-east-2.amazonaws.com/thiru-eks-demo:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8085
+          name: http
+          protocol: TCP
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: springboot-mysql-app
+    k8s-app: springboot-mysql-app
+  name: springboot-mysql-app
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8085
+  type: LoadBalancer
+  selector:
+    app: springboot-mysql-app

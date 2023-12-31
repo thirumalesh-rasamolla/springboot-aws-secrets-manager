@@ -30,7 +30,7 @@ public class ApplicationConfig {
         return DataSourceBuilder
                 .create()
                 //  .driverClassName("com.mysql.cj.jdbc.driver")
-                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/javatechie")
+                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/mysql-demo")
                 .username(secrets.getUsername())
                 .password(secrets.getPassword())
                 .build();
@@ -39,7 +39,7 @@ public class ApplicationConfig {
 
     private AwsSecrets getSecret() {
 
-        String secretName = "javatechie-db-credential";
+        String secretName = "rds-mysql-secret";
         String region = "us-east-2";
 
 
