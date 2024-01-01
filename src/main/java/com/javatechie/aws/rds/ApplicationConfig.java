@@ -16,10 +16,11 @@ import java.util.Base64;
 
 @Configuration
 public class ApplicationConfig {
-    @Value("${cloud.aws.credentials.access-key}")
-    private String accessKey;
-    @Value("${cloud.aws.credentials.secret-key}")
-    private String secretkey;
+	/*
+	 * @Value("${cloud.aws.credentials.access-key}") private String accessKey;
+	 * 
+	 * @Value("${cloud.aws.credentials.secret-key}") private String secretkey;
+	 */
 
 
     private Gson gson = new Gson();
