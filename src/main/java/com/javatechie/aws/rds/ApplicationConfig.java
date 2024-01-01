@@ -29,8 +29,8 @@ public class ApplicationConfig {
         AwsSecrets secrets = getSecret();
         return DataSourceBuilder
                 .create()
-                //  .driverClassName("com.mysql.cj.jdbc.driver")
-                .url("jdbc:" + secrets.getEngine() + "://" + secrets.getHost() + ":" + secrets.getPort() + "/thiru_mysql_db")
+                //.driverClassName("com.mysql.jdbc.Driver")
+                .url("jdbc:mysql://thiru-mysql-db.cgfrcfmrs5uy.us-east-2.rds.amazonaws.com:3306/thiru_mysql_db")
                 .username(secrets.getUsername())
                 .password(secrets.getPassword())
                 .build();
